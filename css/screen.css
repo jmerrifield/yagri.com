@@ -1,0 +1,99 @@
+/* reset.css */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+body {line-height:1.5;}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;}
+table, td, th {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:"";}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+/* end reset */
+
+body {
+	background-color: #333333;
+	color: #444444;
+	font-family: Verdana;
+	font-size: 11px;
+}
+
+a {
+	text-decoration: none;
+	color: #5C80B1;
+}
+
+a:hover {
+	color: Red;
+}
+
+/*----------------------------
+					 Header
+----------------------------*/
+
+#header 
+{
+    background-color: Black;
+	text-align: left;
+	margin: 0 0 30px 0;
+	width: 100%;
+	padding-left: 15px;
+	padding-top: 15px;
+}
+
+#header p {
+	font-family: Arial;
+	font-size: 80px;
+	font-weight: bold;
+	margin: 0px;
+	letter-spacing: 8px;
+}
+
+#header span {
+	font-weight: normal;
+	color: silver;
+	margin: 0px;
+}
+
+#navlinks 
+{
+    float: right;
+    margin: 7px 55px 0 0;
+}
+
+#navlinks span 
+{
+    display:block;
+    margin-bottom: 8px;
+}
+
+#navlinks span img
+{
+    vertical-align: middle;
+    margin-right: 7px;
+}
+
+#navlinks span a 
+{
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+#logowithtag 
+{
+    float: left;
+    text-align: right;
+    width: 448px;
+}
+
+/*----------------------------
+					 Footer
+----------------------------*/
+
+#footer 
+{
+    background-color: Black;
+	text-align: center;
+	margin: 30px 0 0 0;
+	width: 100%;
+}
