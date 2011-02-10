@@ -25,9 +25,7 @@ a:hover {
 	color: Red;
 }
 
-/*----------------------------
-					 Header
-----------------------------*/
+/* Header */
 
 #header 
 {
@@ -86,14 +84,45 @@ a:hover {
     width: 448px;
 }
 
-/*----------------------------
-					 Footer
-----------------------------*/
+/* Page content layout */
+#content {
+	width: 700px;
+	margin-left: 40px;
+}
 
+/* Page footer */
 #footer 
 {
     background-color: Black;
 	text-align: center;
 	margin: 30px 0 0 0;
 	width: 100%;
+}
+
+/* Posts */
+div.post {
+  border: 2px solid silver;
+  margin-bottom: 20px;  
+  background-color: Black;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-top-left-radius: 10px;  
+}
+
+div.post .header {
+  color: White;
+  font-size: large;
+  margin: 0 0 0 0;
+  padding: 10px 10px 4px 10px;
+}
+
+div.post .text {
+    background-color: White;
+	padding: 15px;
+}
+
+div.post .footer {
+	background-color: Black;
+	padding: 6px;
 }
