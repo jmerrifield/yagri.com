@@ -9,79 +9,72 @@ blockquote, q {quotes:"" "";}
 a img {border:none;}
 /* end reset */
 
-body {
-	background-color: #333333;
-	color: #444444;
-	font-family: Verdana;
-	font-size: 11px;
+body {  
+  background-color: #333333;
+  color: #444444;
+  font-family: Verdana;
+  font-size: 11px;
 }
 
 a {
-	text-decoration: none;
-	color: #5C80B1;
+  text-decoration: none;
+  color: #5C80B1;
 }
 
 a:hover {
-	color: Red;
+  color: Red;
 }
 
-/* Header */
-
+/* Page header */
 #header 
 {
-    background-color: Black;
-	text-align: left;
-	margin: 0 0 30px 0;
-	width: 100%;
-	padding-left: 15px;
-	padding-top: 15px;
+  background-color: Black;
+  text-align: left;
+  margin: 0 0 30px 0;
+  width: 100%;
+  padding-left: 15px;
+  padding-top: 15px;
 }
 
 #header p {
-	font-family: Arial;
-	font-size: 80px;
-	font-weight: bold;
-	margin: 0px;
-	letter-spacing: 8px;
+  font-family: Arial;
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0px;
+  letter-spacing: 8px;
 }
 
 #header span {
-	font-weight: normal;
-	color: silver;
-	margin: 0px;
+  font-weight: normal;
+  color: silver;
+  margin: 0px;
 }
 
-#navlinks 
-{
-    float: right;
-    margin: 7px 55px 0 0;
+#navlinks {
+  float: right;
+  margin: 7px 55px 0 0;
 }
 
-#navlinks span 
-{
-    display:block;
-    margin-bottom: 8px;
+#navlinks span {
+  display:block;
+  margin-bottom: 8px;
 }
 
-#navlinks span img
-{
-    vertical-align: middle;
-    margin-right: 7px;
+#navlinks span img {
+  vertical-align: middle;
+  margin-right: 7px;
 }
 
-#navlinks span a 
-{
-    font-family: Arial;
-    font-size: 14px;
-    font-weight: bold;
+#navlinks span a {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-
-#logowithtag 
-{
-    float: left;
-    text-align: right;
-    width: 448px;
+#logowithtag {
+  float: left;
+  text-align: right;
+  width: 448px;
 }
 
 /* Page content layout */
@@ -91,12 +84,11 @@ a:hover {
 }
 
 /* Page footer */
-#footer 
-{
-    background-color: Black;
-	text-align: center;
-	margin: 30px 0 0 0;
-	width: 100%;
+#footer {
+  background-color: Black;
+  text-align: center;
+  margin: 30px 0 0 0;
+  width: 100%;
 }
 
 /* Posts */
@@ -118,11 +110,11 @@ div.post .header {
 }
 
 div.post .text {
-    background-color: White;
-	padding: 15px;
+  background-color: White;
+  padding: 15px;
 }
 
 div.post .footer {
-	background-color: Black;
-	padding: 6px;
+  background-color: Black;
+  padding: 6px;
 }
