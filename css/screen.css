@@ -25,6 +25,10 @@ a:hover {
   color: Red;
 }
 
+p {
+  margin-bottom: 1em;
+}
+
 /* Page header */
 #header 
 {
