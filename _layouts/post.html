@@ -5,5 +5,8 @@ layout: default
 <div class="post">
   <div class="header">{{ page.title }}</div>
   <div class="text">{{ content }}</div>
-  <div class="footer">By Jon</div>
+  <div class="footer">
+      {% include disqus-thread.textile %} 
+      By Jon
+  </div>
 </div>
