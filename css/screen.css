@@ -21,13 +21,9 @@ a {
   color: #5C80B1;
 }
 
-a:hover {
-  color: Red;
-}
-
-p {
-  margin-bottom: 1em;
-}
+a:hover { color: Red; }
+p, pre { margin-bottom: 1em; }
+em {	font-style: italic; }
 
 /* Page header */
 #header 
