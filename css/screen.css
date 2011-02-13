@@ -22,7 +22,7 @@ a {
 }
 
 a:hover { color: Red; }
-p, pre { margin-bottom: 1em; }
+p, pre, .highlight { margin-bottom: 1em; }
 em {	font-style: italic; }
 
 /* Page header */
