@@ -14,7 +14,7 @@ A bit of googling turned up the solution [here](http://smehrozalam.wordpress.com
 
 Wrong:
 
-{% highlight c# %}
+{% highlight csharp %}
 using System;
 
 namespace GraphVizDebugging
@@ -23,7 +23,7 @@ namespace GraphVizDebugging
 {% endhighlight %}
 Right:
 
-{% highlight c# %}
+{% highlight csharp %}
 namespace GraphVizDebugging
 {
   using System;
