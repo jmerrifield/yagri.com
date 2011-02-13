@@ -15,11 +15,7 @@ The advantages to this are twofold.  First, I can change the exact type of a con
 
 The second, less obvious, advantage is having predictable control names.  When you’ve spent as much time as I have maintaining hellish 10,000 line ‘MainForm.cs’ classes with so many controls that you can’t even load the designer, you really appreciate being able to guess the name of the Order Status dropdown without having to try various permutations of ‘drop’, ‘ddl’, ‘combo’, ‘list’ prefixes.
 
-<<<<<<< HEAD
 ![Conventions in use][2]
 
 [1]: http://stackoverflow.com/questions/642759/naming-convention-for-controls/642818#642818
 [2]: {{ site.root }}/images/2010-01-27-Form-Control-Naming-Conventions-pic1.png
-=======
-{% post_image pic1.png %}
->>>>>>> 3b8382f117528b00458a764a839a1e101df61cd1

@@ -17,11 +17,7 @@ We also used soft-deletes (mostly so we didn’t have to make the UI smart enoug
 
 The UI did a great job of presenting a simple view to the user, it flattened the tree into groups of required conditions, and grouped those into optional sets, while hiding anything that had been deleted.  Unfortunately that made it difficult to get an idea of what the tree really looked like.  The database table for a simple decision looked something like this:
 
-<<<<<<< HEAD
 [![Decision table][1]][2]
-=======
-{% post_image pic1.png %}
->>>>>>> 3b8382f117528b00458a764a839a1e101df61cd1
 
 What you’re seeing is guid identifiers, single-table inheritance, and self-referential foreign keys.  How much fun would you have walking through that decision tree by following the child id’s and checking deleted flags?  Now consider that this decision is _tiny_, and it’s the _only one_ in that table, and you might start to see why I went to the trouble of writing a tool to help me when one of our users reported that a particularly complex decision was filtering applicants incorrectly.
 
@@ -36,21 +32,13 @@ Drawing out a tree by hand at this scale is slow, error-prone, and just soul des
 
 And turns it into a directed graph like this:
 
-<<<<<<< HEAD
 ![Sample dot output][4]
-=======
-{% post_image pic2.png %}
->>>>>>> 3b8382f117528b00458a764a839a1e101df61cd1
 
 You can see it would be fairly trivial to hack together a program to generate dot markup representing our decision tree, and have dot render it into something that we can actually comprehend.
 
 We’ll start by setting up some LINQ to SQL classes:
 
-<<<<<<< HEAD
 [![LINQ-to-SQL classes][5]][6]
-=======
-{% post_image pic3.png %}
->>>>>>> 3b8382f117528b00458a764a839a1e101df61cd1
 
 When I wrote this for real I went for the quick-and-dirty method and churned out a horrendous piece of code full of massive switch statements and other awful things that I’m ashamed to admit.  Thankfully that solution was accidentally deleted and will never see the light of day.  For this post I decided to make things a bit nicer, so I’m using the [Visitor pattern][7], it’s overkill for a simple tool but this is a good example of how it helps you use the power of polymorphism without bloating your classes with extra methods that would make them less cohesive.
 
@@ -167,11 +155,7 @@ That looks good, so we can change the command to pipe the output into dot, and r
 
 Now if we open up out.png:
 
-<<<<<<< HEAD
 [![Final output][8]][9]
-=======
-{% post_image pic4.png %}
->>>>>>> 3b8382f117528b00458a764a839a1e101df61cd1
 
 Now that’s something I can print out a few copies of and attack with coloured markers, while I trace through exactly why the evaluation is failing.  The deleted nodes have a grey outline so we know they’re different, and it’s easy to add more conditional styling if we want to highlight certain things or differentiate between predicate types.
 
