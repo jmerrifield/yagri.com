@@ -169,15 +169,15 @@ If you find yourself in a similar situation where you can’t figure out the int
 
 [Example code from this post][12]
 
-[1]: {{ site.root }}/images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic1.resized.png
-[2]: {{ site.root }}/images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic1.png
+[1]: /images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic1.resized.png
+[2]: /images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic1.png
 [3]: http://www.graphviz.org/
-[4]: {{ site.root }}/images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic2.png
-[5]: {{ site.root }}/images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic3.resized.png
-[6]: {{ site.root }}/images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic3.png
+[4]: /images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic2.png
+[5]: /images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic3.resized.png
+[6]: /images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic3.png
 [7]: http://en.wikipedia.org/wiki/Visitor_pattern
-[8]: {{ site.root }}/images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic4.resized.png
-[9]: {{ site.root }}/images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic4.png
+[8]: /images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic4.resized.png
+[9]: /images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic4.png
 [10]: http://www.graphviz.org/Download..php
 [11]: http://www.graphviz.org/pdf/dotguide.pdf
 [12]: https://github.com/jmerrifield/yagri.com/tree/master/code_examples/2010-02-01-Visualising-Complex-Structures-With-GraphViz

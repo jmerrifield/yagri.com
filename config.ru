@@ -1,2 +1,2 @@
-require File.join(File.dirname(__FILE__), 'app', 'yagri')
+require File.join(File.dirname(__FILE__), 'yagri')
 run Sinatra::Application

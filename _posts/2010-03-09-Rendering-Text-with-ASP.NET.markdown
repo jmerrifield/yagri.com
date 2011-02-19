@@ -14,7 +14,7 @@ public class CustomerSummaryPage : Page
 
     protected override void OnLoad(EventArgs e)
     {
-        // Don't need viewstate as we have no server controls 
+        // Don't need viewstate as we have no server controls
         // and aren't even submitting any data back
         EnableViewState = false;
 
@@ -73,7 +73,7 @@ If you think about it, ASP.NET is really just a fancy text templating system, ta
 Customer <%= Customer.Id %> (<%= Customer.Name %>)
 Address: <%= Customer.Address %>
 Phone: <%= Customer.PhoneNumber %>
- 
+
 Past orders:
 ------------
 <% foreach (var order in Customer.PastOrders) { %>
@@ -94,9 +94,9 @@ Also it turned out to be tricky to get the whitespace in the report just right, 
 Although you’d quickly run into limitations if you pushed this too far, and it is a bit unusual to use ASP.NET like this, it’s comforting to know that anyone familiar with ASP.NET markup (i.e. everyone on the team) could immediately dive in and fix bugs or enhance this report without needing to get familiar with any other code.
 
 [1]: http://codebetter.com/blogs/rob.conery/archive/2009/04/22/i-spose-i-ll-just-say-it-you-should-learn-mvc.aspx
-[2]: {{ site.root }}/images/2010-03-09-Rendering-Text-with-ASP.NET-pic1.resized.png
-[3]: {{ site.root }}/images/2010-03-09-Rendering-Text-with-ASP.NET-pic1.png
-[4]: {{ site.root }}/images/2010-03-09-Rendering-Text-with-ASP.NET-pic2.resized.png
-[5]: {{ site.root }}/images/2010-03-09-Rendering-Text-with-ASP.NET-pic2.png
-[6]: {{ site.root }}/images/2010-03-09-Rendering-Text-with-ASP.NET-pic3.png
+[2]: /images/2010-03-09-Rendering-Text-with-ASP.NET-pic1.resized.png
+[3]: /images/2010-03-09-Rendering-Text-with-ASP.NET-pic1.png
+[4]: /images/2010-03-09-Rendering-Text-with-ASP.NET-pic2.resized.png
+[5]: /images/2010-03-09-Rendering-Text-with-ASP.NET-pic2.png
+[6]: /images/2010-03-09-Rendering-Text-with-ASP.NET-pic3.png
 

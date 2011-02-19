@@ -18,4 +18,4 @@ The second, less obvious, advantage is having predictable control names.  When y
 ![Conventions in use][2]
 
 [1]: http://stackoverflow.com/questions/642759/naming-convention-for-controls/642818#642818
-[2]: {{ site.root }}/images/2010-01-27-Form-Control-Naming-Conventions-pic1.png
+[2]: /images/2010-01-27-Form-Control-Naming-Conventions-pic1.png

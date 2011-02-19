@@ -10,7 +10,7 @@ Eventually I realised that every time I saved the diagram, the .designer.cs file
 
 ![Missing file][2]
 
-A bit of googling turned up the solution [here][3], I had added some code to the auto-generated partial class file (Data.cs), and foolishly didn’t realise that any ‘using’ statements in that file have to go inside the namespace declaration! 
+A bit of googling turned up the solution [here][3], I had added some code to the auto-generated partial class file (Data.cs), and foolishly didn’t realise that any ‘using’ statements in that file have to go inside the namespace declaration!
 
 Wrong:
 
@@ -31,6 +31,6 @@ namespace GraphVizDebugging
   partial class Predicate
 {% endhighlight %}
 
-[1]: {{ site.root }}/images/2010-01-29-LINQ-to-SQL-Unspecified-Error-and-missing-designer-file-pic1.png
-[2]: {{ site.root }}/images/2010-01-29-LINQ-to-SQL-Unspecified-Error-and-missing-designer-file-pic2.png
+[1]: /images/2010-01-29-LINQ-to-SQL-Unspecified-Error-and-missing-designer-file-pic1.png
+[2]: /images/2010-01-29-LINQ-to-SQL-Unspecified-Error-and-missing-designer-file-pic2.png
 [3]: http://smehrozalam.wordpress.com/2009/10/05/linq-to-sql-visual-studio-designer-failed-to-autogenerate-designer-cs-data-classes/
