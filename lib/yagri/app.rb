@@ -4,6 +4,8 @@ class App < Sinatra::Base
   set :public, 'public'
 
   get '/' do
-    liquid :index
+    posts = Dir.glob(File.dirname(__FILE__) + '/../../_posts/*.markdown').map { |x| Post.new(x) }
+
+    haml :index, :locals => {:posts => posts}
   end
 end

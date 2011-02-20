@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra'
-require 'liquid'
+require 'haml'
 
+require 'yagri/post'
 require 'yagri/app'

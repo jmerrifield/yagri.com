@@ -2,7 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     diff-lcs (1.1.2)
-    liquid (2.2.2)
+    haml (3.0.25)
     rack (1.2.1)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
@@ -21,6 +21,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  liquid (= 2.2.2)
+  haml (= 3.0.25)
   rspec
   sinatra (= 1.1.2)
