@@ -19,4 +19,10 @@ class App < Sinatra::Base
     post_content = RDiscount.new(File.read(filename)).to_html
     haml :post, :locals =>{:post => Post.new(filename), :post_content => post_content}
   end
+
+  get '/atom' do
+    posts = Dir.glob(File.dirname(__FILE__) + '/../../_posts/*.markdown').map { |x| Post.new(x) }
+
+    haml :atom, :layout => false, :locals => {:posts => posts}
+  end
 end

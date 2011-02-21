@@ -1,3 +1,4 @@
+Finish atom feed - add post content, sort out dates, re-point links (to /atom)
 Beef up title handling so that e.g. ASP.NET becomes ASP-NET.  Figure out how to specify the real title somewhere else.
 Code highlighting
 Comments

@@ -1,0 +1,19 @@
+!!! xml
+%feed{:xmlns=>"http://www.w3.org/2005/Atom"}
+  %title yagri.com - You Ain't Gonna Read It
+  %link{:rel=>"self", :href=>"http://yagri.com/atom.xml"}
+  %link{:href=>"http://yagri.com/"}
+  %icon http://yagri.com/favicon.ico
+  %updated TODO
+  %id http://yagri.com/
+  %author
+    %name Jon Merrifield
+
+  - posts.each do |post|
+    %entry
+      %title= post.title
+      %id= "http://yagri.com/" + post.url
+      %link{:href=> "http://yagri.com/" + post.url}
+      %updated= post.date
+      %published= post.date
+      %content{:type=>"html"} POST CONTENT - TODO
