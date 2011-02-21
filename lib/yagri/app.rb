@@ -8,4 +8,15 @@ class App < Sinatra::Base
 
     haml :index, :locals => {:posts => posts}
   end
+
+  get '/:year/:month/:day/:slug' do
+    filename = File.dirname(__FILE__) + "/../../_posts/" + Post.filename_from_hash(params)
+    unless File.exist? filename
+      puts "Post with name #{filename} not found"
+      pass
+    end
+
+    post_content = RDiscount.new(File.read(filename)).to_html
+    haml :post, :locals =>{:post => Post.new(filename), :post_content => post_content}
+  end
 end

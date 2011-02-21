@@ -4,6 +4,7 @@ GEM
     diff-lcs (1.1.2)
     haml (3.0.25)
     rack (1.2.1)
+    rdiscount (1.6.8)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
       rspec-expectations (~> 2.5.0)
@@ -22,5 +23,6 @@ PLATFORMS
 
 DEPENDENCIES
   haml (= 3.0.25)
+  rdiscount (= 1.6.8)
   rspec
   sinatra (= 1.1.2)
