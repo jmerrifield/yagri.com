@@ -1,7 +1,3 @@
----
-layout: post
----
-
 For my first real post I thought I would expand on an answer I gave to a question on StackOverflow [here][1].
 
 The question was asking about naming conventions for winforms and webforms controls.  My take on this is that there’s no need to embed too much type information in the control’s name, e.g. txtCustomerName, comboOrderStatus (hungarian notation isn’t generally used for variable names any more, so why use it for control names?).  It is, however, useful to distinguish controls from variables that might be holding the same information, you don’t want ambiguity between customerName (the textbox) and customerName (the string variable).

@@ -1,7 +1,3 @@
----
-layout: post
----
-
 Every time I interview for a programming job the same dreaded question comes up\: "If you had to join a number of strings together, how would you do it?".  Every time I hear it, I die a little on the inside, while I sit there wondering if I should launch into a rant about [the evils of micro-optimisation][1], or start comparing the [relative performance][2] of various string concatenation methods.  I usually tell them what they're obviously waiting to hear: "I would use a StringBuilder because it is far more memory efficient than multiple string concatenations".  Straight from the textbook.
 
 Regardless of which method you use, you can't escape the fact that most string concatenation code is ugly as hell, let's look at a few ways you could create a comma separated list of customers names, each one surrounded with quotes:
@@ -24,7 +20,7 @@ foreach (var customer in customers)
     {
         result += separator;
     }
-} 
+}
 
 return result;
 {% endhighlight %}
@@ -42,7 +38,7 @@ foreach (var customer in customers)
         builder.Append(separator);
     }
 }
- 
+
 return builder.ToString();
 {% endhighlight %}
 
@@ -50,7 +46,7 @@ return builder.ToString();
 // It gets a little better with string.join
 var names = customers.Select(x => quote + x.Name + quote);
 var nameArray = names.ToArray();
- 
+
 return string.Join(separator, nameArray);
 {% endhighlight %}
 
@@ -64,7 +60,7 @@ public static string ConcatStrings(this IEnumerable<string> source, string separ
     if (source == null) throw new ArgumentNullException("source");
     return string.Join(separator, source.ToArray());
 }
- 
+
 public static string Wrap(this string source, string wrapper)
 {
     return wrapper + source + wrapper;

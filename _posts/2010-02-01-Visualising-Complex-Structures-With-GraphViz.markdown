@@ -1,7 +1,3 @@
----
-layout: post
----
-
 Whenever I’m trying to solve a particularly complex problem, I immediately reach for a sheet of paper and start making drawings to help wrap my head around it.  I often find myself tits-deep in piles of shabby diagrams scribbled on the back of envelopes and napkins.  I'd bet that most developers are the same.  But what do you do when faced with something big or complex enough that you can’t even manage to get it onto paper?  Rewrite your software so it’s not quite so ridiculously complicated?  In a perfect world, maybe, but another option is to bring out the heavy tools and write some code to do the visualising for you.  In this post I’ll look at how we can use a powerful free graphing library to easily produce diagrams of complex data structures.
 
 The examples here are contrived, but directly inspired by a real-world problem I spent many hours trying to debug.  The last project I worked on had a decision system which allowed administrators to define complex criteria which could be used to filter applicants (this was a job recruitment system).  Each decision was stored as a tree of predicates, something like this:

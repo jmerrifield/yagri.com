@@ -1,0 +1,4 @@
+Beef up title handling so that e.g. ASP.NET becomes ASP-NET.  Figure out how to specify the real title somewhere else.
+Code highlighting
+Comments
+Tags?  low-priority

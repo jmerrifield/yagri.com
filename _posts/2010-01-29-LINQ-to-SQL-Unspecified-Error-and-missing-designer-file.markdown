@@ -1,7 +1,3 @@
----
-layout: post
----
-
 I’ve been doing battle with the LINQ to SQL designer for a while now so I was surprised to be caught out by this, frankly, unbelievable issue.  Putting together some example code for my next post, I had a .dbml file with around 4 classes, and suddenly the designer began throwing up a very unhelpful ‘Unspecified Error' every time I tried to make any changes.
 
 ![Error message][1]
