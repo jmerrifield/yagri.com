@@ -8,7 +8,7 @@ describe "Post" do
   end
 
   it "should parse the date from the file name" do
-    @post.date.should == Date.new(2010, 06, 25)
+    @post.date.should == Time.local(2010, 06, 25)
   end
 
   it "should parse the post title from the file name" do

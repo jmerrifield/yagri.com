@@ -4,7 +4,7 @@
   %link{:rel=>"self", :href=>"http://yagri.com/atom.xml"}
   %link{:href=>"http://yagri.com/"}
   %icon http://yagri.com/favicon.ico
-  %updated TODO
+  %updated= posts.first.date.xmlschema
   %id http://yagri.com/
   %author
     %name Jon Merrifield
@@ -14,6 +14,6 @@
       %title= post.title
       %id= "http://yagri.com/" + post.url
       %link{:href=> "http://yagri.com/" + post.url}
-      %updated= post.date
-      %published= post.date
+      %updated= post.date.xmlschema
+      %published= post.date.xmlschema
       %content{:type=>"html"} POST CONTENT - TODO

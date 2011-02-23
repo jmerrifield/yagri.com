@@ -3,10 +3,15 @@ class App < Sinatra::Base
   set :static, true
   set :public, 'public'
 
-  get '/' do
-    posts = Dir.glob(File.dirname(__FILE__) + '/../../_posts/*.markdown').map { |x| Post.new(x) }
+  def get_posts
+    posts = Dir.glob(File.dirname(__FILE__) + '/../../_posts/*.markdown').
+        map { |x| Post.new(x) }.
+        sort { |a, b| b.date <=> a.date }
+    posts
+  end
 
-    haml :index, :locals => {:posts => posts}
+  get '/' do
+    haml :index, :locals => {:posts => get_posts}
   end
 
   get '/:year/:month/:day/:slug' do
@@ -21,8 +26,6 @@ class App < Sinatra::Base
   end
 
   get '/atom' do
-    posts = Dir.glob(File.dirname(__FILE__) + '/../../_posts/*.markdown').map { |x| Post.new(x) }
-
-    haml :atom, :layout => false, :locals => {:posts => posts}
+    haml :atom, :layout => false, :locals => {:posts => get_posts}
   end
 end
