@@ -21,8 +21,7 @@ class App < Sinatra::Base
       pass
     end
 
-    post_content = RDiscount.new(File.read(filename)).to_html
-    haml :post, :locals =>{:post => Post.new(filename), :post_content => post_content}
+    haml :post, :locals =>{:post => Post.new(filename)}
   end
 
   get '/atom' do

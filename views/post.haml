@@ -1,6 +1,8 @@
 .post
   .header= post.title
-  .text= post_content
+  .text
+    :markdown
+      #{post.content}
   .footer
     %p
       TODO:Comment thread
