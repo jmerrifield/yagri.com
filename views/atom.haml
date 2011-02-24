@@ -16,4 +16,6 @@
       %link{:href=> "http://yagri.com/" + post.url}
       %updated= post.date.xmlschema
       %published= post.date.xmlschema
-      %content{:type=>"html"} POST CONTENT - TODO
+      %content{:type=>"html"}
+        :escapedmarkdown
+          #{post.content}

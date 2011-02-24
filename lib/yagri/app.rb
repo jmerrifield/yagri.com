@@ -26,6 +26,6 @@ class App < Sinatra::Base
   end
 
   get '/atom' do
-    haml :atom, :layout => false, :locals => {:posts => get_posts}
+    haml :atom, :layout => false, :locals => {:posts => get_posts}, :escape_html => true
   end
 end

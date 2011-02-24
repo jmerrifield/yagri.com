@@ -1,10 +1,12 @@
+require 'time'
+
 class Post
   def initialize(file_name)
-    @file_name = File.basename(file_name)
+    @file_name = file_name
   end
 
   def date
-    Time.parse(@file_name[0..9], "%Y-%m-%d")
+    Time.parse(filename_nodir[0..9], "%Y-%m-%d")
   end
 
   def title
@@ -23,8 +25,17 @@ class Post
     filename_from(h[:year], h[:month], h[:day], h[:slug])
   end
 
+  def content
+    File.read(@file_name)
+#    RDiscount.new(File.read(@file_name)).to_html
+  end
+
   private
+  def filename_nodir
+    File.basename @file_name
+  end
+
   def raw_filename
-    @file_name[11..-10]
+    filename_nodir[11..-10]
   end
 end
