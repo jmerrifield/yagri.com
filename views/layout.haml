@@ -4,18 +4,16 @@
 
     %link{:rel => "stylesheet", :href => "/css/screen.css", :type => "text/css"}
     %link{:rel => "stylesheet", :href => "/css/syntax.css", :type => "text/css"}
-    %link{:rel => "alternate", :href => "/atom.xml", :type => "application/atom+xml", :title => "ATOM Feed"}
+    %link{:rel => "alternate", :href => "/atom", :type => "application/atom+xml", :title => "ATOM Feed"}
     %link{:rel => "shortcut icon", :href => "/favicon.ico"}
 
     %title
-      home page
-      | yagri.com
+      home page | yagri.com
 
-    %script{:type => "text/javascript"}
-      :plain
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-12677574-1']);
-        _gaq.push(['_trackPageview']);
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-12677574-1']);
+      _gaq.push(['_trackPageview']);
 
   %body
     #header
@@ -33,13 +31,12 @@
             %img{:src => "/images/mail.png", :alt => "Contact"}
             Contact
         %span
-          %a{:href => "/atom.xml", :class => "feed"}
+          %a{:href => "/atom", :class => "feed"}
             %img{:src => "/images/rss.png", :alt => "Feed"}
             Subscribe
       %div{:style => "clear:both;"}
 
-  #content
-    =yield
+  #content= yield
 
   #footer
     %p
@@ -47,13 +44,12 @@
       by
       %a{:href => "http://www.axialis.com"}Axialis Team
 
-  %script{:type => "text/javascript"}
-    :plain
-      (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-      })();
+  :javascript
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
