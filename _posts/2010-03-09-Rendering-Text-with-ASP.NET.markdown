@@ -2,7 +2,7 @@ We had a user story at work recently which required a simple summary report page
 
 As the report page was read-only, and quite simple, I opted not to use server controls, in line with my growing dislike of the whole [abstraction wrapped in deception covered in lie sauce][1] issue around webforms.  I wrote a simple code behind class to grab the input parameter from the query string, pull the relevant data from the repositories, and expose the data using a protected property on the page.
 
-{% highlight csharp %}
+{% highlight cs %}
 public class CustomerSummaryPage : Page
 {
     protected Customer Customer { get; private set; }
@@ -24,7 +24,7 @@ public class CustomerSummaryPage : Page
 
 Then the .aspx file uses clean markup with embedded server tags to render a simple summary report:
 
-{% highlight csharp %}
+{% highlight html_for_asp.net %}
 <%@ Page Language="C#" Inherits="AspNetText.CustomerSummaryPage" %>
 <html>
 <head>
@@ -61,7 +61,7 @@ The interesting bit starts when we look at fulfilling the text-file export part 
 
 If you think about it, ASP.NET is really just a fancy text templating system, taking our .aspx files, and at runtime replacing our server tags with real values, although this aspect is hard to appreciate when you’re looking at a page loaded with DataGrids and hidden ViewState fields...  The point being that we’re not tied to rendering HTML, we can use this power to render whatever we want, and with a few hints to the browser as to what we’re sending it, we can get a real quick-and-easy text report for our users:
 
-{% highlight csharp %}
+{% highlight cs %}
 <%@ Page Language="C#" Inherits="AspNetText.CustomerSummaryPage" %>
 <% Response.ContentType = "text/plain"; %>
 <% Response.AddHeader("Content-Disposition", "attachment;filename=CustomerReport.txt"); %>

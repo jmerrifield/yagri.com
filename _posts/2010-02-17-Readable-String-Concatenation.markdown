@@ -2,7 +2,7 @@ Every time I interview for a programming job the same dreaded question comes up\
 
 Regardless of which method you use, you can't escape the fact that most string concatenation code is ugly as hell, let's look at a few ways you could create a comma separated list of customers names, each one surrounded with quotes:
 
-{% highlight csharp %}
+{% highlight cs %}
 // Set up our test data
 const string separator = ", ";
 const string quote = "'";
@@ -10,7 +10,7 @@ var customers = new[] { "Chuck Norris", "Bruce Lee", "Bear Grylls", "Ray Mears" 
     .Select(x => new Customer { Name = x });
 {% endhighlight %}
 
-{% highlight csharp %}
+{% highlight cs %}
 // Standard string concatenation
 string result = string.Empty;
 foreach (var customer in customers)
@@ -25,7 +25,7 @@ foreach (var customer in customers)
 return result;
 {% endhighlight %}
 
-{% highlight csharp %}
+{% highlight cs %}
 // StringBuilder to keep the interviewers happy
 var builder = new StringBuilder();
 foreach (var customer in customers)
@@ -42,7 +42,7 @@ foreach (var customer in customers)
 return builder.ToString();
 {% endhighlight %}
 
-{% highlight csharp %}
+{% highlight cs %}
 // It gets a little better with string.join
 var names = customers.Select(x => quote + x.Name + quote);
 var nameArray = names.ToArray();
@@ -54,7 +54,7 @@ It's surprising how this fairly simple task turns into such a lot of code, none 
 
 With a few very simple extension methods, which look like they would come in handy all over, we can reduce this task to the amount of code that it seems like it should take - a screamingly obvious one-liner.
 
-{% highlight csharp %}
+{% highlight cs %}
 public static string ConcatStrings(this IEnumerable<string> source, string separator)
 {
     if (source == null) throw new ArgumentNullException("source");
@@ -69,7 +69,7 @@ public static string Wrap(this string source, string wrapper)
 
 Now we can use this:
 
-{% highlight csharp %}
+{% highlight cs %}
 return customers.Select(x => x.Name.Wrap(quote)).ConcatStrings(separator);
 {% endhighlight %}
 

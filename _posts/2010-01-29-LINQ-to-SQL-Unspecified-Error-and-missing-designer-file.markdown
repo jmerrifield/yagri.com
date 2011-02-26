@@ -10,7 +10,7 @@ A bit of googling turned up the solution [here][3], I had added some code to the
 
 Wrong:
 
-{% highlight csharp %}
+{% highlight cs %}
 using System;
 
 namespace GraphVizDebugging
@@ -19,7 +19,7 @@ namespace GraphVizDebugging
 {% endhighlight %}
 Right:
 
-{% highlight csharp %}
+{% highlight cs %}
 namespace GraphVizDebugging
 {
   using System;

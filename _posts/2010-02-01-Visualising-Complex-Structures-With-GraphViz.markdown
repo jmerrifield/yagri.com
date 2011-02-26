@@ -40,7 +40,7 @@ When I wrote this for real I went for the quick-and-dirty method and churned out
 
 In my case, the actual predicate classes already used the Visitor pattern so in theory I could simply have referenced the core assembly and passed in a new Visitor implementation, making things even easier.  In practice there was something of a dependency nightmare so it wasn’t an option.  Here’s the interface and some of the code I had to add to the domain classes:
 
-{% highlight csharp %}
+{% highlight cs %}
 public interface IPredicateVisitor
 {
     void Visit(RootPredicate predicate);
@@ -50,7 +50,7 @@ public interface IPredicateVisitor
 }
 {% endhighlight %}
 
-{% highlight csharp %}
+{% highlight cs %}
 partial class Predicate
 {
     public abstract void Accept(IPredicateVisitor visitor);
@@ -69,7 +69,7 @@ partial class RootPredicate
 
 I won’t include the whole visitor implementation here (all the code is attached at the end of the post) but here is one method to illustrate the idea:
 
-{% highlight csharp %}
+{% highlight cs %}
 public void Visit(AndPredicate predicate)
 {
     var thisId = ids.GetIdFor(predicate);
@@ -90,7 +90,7 @@ This writes 3 output lines.  The first sets the label and any styling for the gr
 
 To invoke our visitor, we wrap it in a very simple program:
 
-{% highlight csharp %}
+{% highlight cs %}
 static void Main(string[] args)
 {
     Console.Error.WriteLine("Getting tree for predicate root id '{0}'", args[0]);
