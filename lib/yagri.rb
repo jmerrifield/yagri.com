@@ -2,8 +2,10 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'rdiscount'
+require 'liquid'
 
-require 'haml/filters/escaped_markdown'
+require 'liquid_filters'
+require 'haml_filters'
 
 require 'yagri/post'
 require 'yagri/app'
