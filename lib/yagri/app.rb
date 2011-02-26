@@ -11,7 +11,8 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    haml :index, :locals => {:posts => get_posts}
+    page_title = 'Home Page | yagri.com'
+    haml :index, :locals => { :posts => get_posts, :page_title => page_title }
   end
 
   get '/:year/:month/:day/:slug' do
@@ -21,10 +22,12 @@ class App < Sinatra::Base
       pass
     end
 
-    haml :post, :locals =>{:post => Post.new(filename)}
+    post = Post.new(filename)
+    page_title = "#{post.title} | yagri.com"
+    haml :post, :locals =>{ :post => post, :page_title => page_title }
   end
 
   get '/atom' do
-    haml :atom, :layout => false, :locals => {:posts => get_posts}, :escape_html => true
+    haml :atom, :layout => false, :locals => { :posts => get_posts }, :escape_html => true
   end
 end
