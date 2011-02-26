@@ -12,6 +12,18 @@ class Highlight < Liquid::Block
   def highlight_code(code)
     RestClient.post "http://ultraviolence.heroku.com/api?s=html_for_asp.net&l=0&t=blackboard", code
   end
+
+  # See https://github.com/technoweenie/ultraviolence/issues#issue/2
+  # To get around this, replace semicolons with some (hopefully) unused string
+  # and put them back in after we've sent it to the formatter
+  alias original_highlight_code highlight_code
+  private :original_highlight_code
+
+  def highlight_code(code)
+    hacked_code = code.gsub(';', 'MAGIC_SEMI')
+    highlighted_hacked = original_highlight_code(hacked_code)
+    highlighted_hacked.gsub('MAGIC_SEMI', ';')
+  end
 end
 
 Liquid::Template.register_tag('highlight', Highlight)
