@@ -15,40 +15,6 @@
       _gaq.push(['_trackPageview']);
 
   %body
-    #header
-      #logowithtag
-        %a{:href => "/"}
-          %img{:src => "/images/logo.png", :width => "448", :height => "91", :alt => "logo"}
-        %span You Ain't Gonna Read It
-      #navlinks
-        %span
-          %a{:href => "/", :rel => "home"}
-            %img{:src => "/images/home.png", :alt => "Home"}
-            Home
-        %span
-          %a{:href => "/contact.html"}
-            %img{:src => "/images/mail.png", :alt => "Contact"}
-            Contact
-        %span
-          %a{:href => "/atom", :class => "feed"}
-            %img{:src => "/images/rss.png", :alt => "Feed"}
-            Subscribe
-      %div{:style => "clear:both;"}
-
-  #content= yield
-
-  #footer
-    %p
-      %a{:href => "http://www.axialis.com/free/icons"}Icons
-      by
-      %a{:href => "http://www.axialis.com"}Axialis Team
-
-  :javascript
-    (function() {
-      var ga = document.createElement('script');
-      ga.type = 'text/javascript';
-      ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(ga, s);
-    })();
+    =haml :header
+    #content= yield
+    =haml :footer
