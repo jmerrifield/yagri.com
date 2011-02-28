@@ -2,6 +2,7 @@ class App < Sinatra::Base
   # Need to set these for static files - http://davidwparker.com/2009/11/13/sinatra-base-static-file-issue/
   set :static, true
   set :public, 'public'
+  Post.base_dir = File.join(File.dirname(__FILE__), '../../_posts')
 
   def get_posts
     posts = Dir.glob(File.dirname(__FILE__) + '/../../_posts/*.markdown').
@@ -29,5 +30,18 @@ class App < Sinatra::Base
 
   get '/atom' do
     haml :atom, :layout => false, :locals => { :posts => get_posts }, :escape_html => true
+  end
+
+  get '/blog/?' do
+    redirect '/', 301
+  end
+
+  get '/blog/syndication.axd' do
+    redirect '/atom', 301
+  end
+
+  get '/blog/post/:year/:month/:day/:slug.aspx' do
+    post = Post.post_for_date(params[:year], params[:month], params[:day])
+    redirect post.url, 301
   end
 end
