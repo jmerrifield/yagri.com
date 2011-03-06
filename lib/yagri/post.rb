@@ -42,6 +42,10 @@ class Post
     filename_from(h[:year], h[:month], h[:day], h[:slug])
   end
 
+  def uniqueref
+    "post_#{date.strftime('%Y_%m_%d')}"
+  end
+
   def content
     File.read(@file_name)
 #    RDiscount.new(File.read(@file_name)).to_html

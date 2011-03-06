@@ -1,5 +1,3 @@
-Contact page
-Redirects from old URL's
 Redirects to canonical URL's
 Comments
 Tags?  low-priority

@@ -6,5 +6,5 @@
       #{post.content}
   .footer
     %p
-      TODO:Comment thread
+      =haml :comment_thread, :locals => {:post => post}
       By Jon
