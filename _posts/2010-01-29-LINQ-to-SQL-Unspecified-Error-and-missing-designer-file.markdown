@@ -10,22 +10,11 @@ A bit of googling turned up the solution [here][3], I had added some code to the
 
 Wrong:
 
-{% highlight cs %}
-using System;
+<script src="https://gist.github.com/1093742.js?file=Wrong.cs"></script>
 
-namespace GraphVizDebugging
-{
-  partial class Predicate
-{% endhighlight %}
 Right:
 
-{% highlight cs %}
-namespace GraphVizDebugging
-{
-  using System;
-
-  partial class Predicate
-{% endhighlight %}
+<script src="https://gist.github.com/1093742.js?file=Right.cs"></script>
 
 [1]: /images/2010-01-29-LINQ-to-SQL-Unspecified-Error-and-missing-designer-file-pic1.png
 [2]: /images/2010-01-29-LINQ-to-SQL-Unspecified-Error-and-missing-designer-file-pic2.png
