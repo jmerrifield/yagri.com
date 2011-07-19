@@ -2,52 +2,11 @@ We had a user story at work recently which required a simple summary report page
 
 As the report page was read-only, and quite simple, I opted not to use server controls, in line with my growing dislike of the whole [abstraction wrapped in deception covered in lie sauce][1] issue around webforms.  I wrote a simple code behind class to grab the input parameter from the query string, pull the relevant data from the repositories, and expose the data using a protected property on the page.
 
-{% highlight cs %}
-public class CustomerSummaryPage : Page
-{
-    protected Customer Customer { get; private set; }
-
-    protected override void OnLoad(EventArgs e)
-    {
-        // Don't need viewstate as we have no server controls
-        // and aren't even submitting any data back
-        EnableViewState = false;
-
-        // In production, more robust input parsing required!
-        int customerId = int.Parse(Request.QueryString["customerId"]);
-
-        // Expose the data to the view
-        Customer = new Repository().GetCustomerById(customerId);
-    }
-}
-{% endhighlight %}
+<script src="https://gist.github.com/1093688.js?file=CustomerSummaryPage.aspx.cs"></script>
 
 Then the .aspx file uses clean markup with embedded server tags to render a simple summary report:
 
-{% highlight html_for_asp.net %}
-<%@ Page Language="C#" Inherits="AspNetText.CustomerSummaryPage" %>
-<html>
-<head>
-    <title>Customer Summary</title>
-</head>
-<body>
-    <h1>Customer <%= Customer.Id %> (<%= Customer.Name %>)</h1>
-    <p>Address: <%= Customer.Address %></p>
-    <p>Phone: <%= Customer.PhoneNumber %></p>
-
-    <div>
-        <h2>Past orders</h2>
-        <% foreach (var order in Customer.PastOrders) { %>
-            <div>
-                <h3><%= order.Id %> (<%= order.Ref %>)</h3>
-                <p>Placed on: <%= order.Placed %></p>
-                <p>Total value: £<%= order.TotalValue %></p>
-            </div>
-        <% } %>
-    </div>
-</body>
-</html>
-{% endhighlight %}
+<script src="https://gist.github.com/1093688.js?file=CustomerSummaryPage.aspx"></script>
 
 Notice how clean this looks compared to a normal ASP.NET page covered in server controls, it’s more like an MVC view.  When we load this page up and check the source, the goodness continues:
 
@@ -61,22 +20,7 @@ The interesting bit starts when we look at fulfilling the text-file export part 
 
 If you think about it, ASP.NET is really just a fancy text templating system, taking our .aspx files, and at runtime replacing our server tags with real values, although this aspect is hard to appreciate when you’re looking at a page loaded with DataGrids and hidden ViewState fields...  The point being that we’re not tied to rendering HTML, we can use this power to render whatever we want, and with a few hints to the browser as to what we’re sending it, we can get a real quick-and-easy text report for our users:
 
-{% highlight cs %}
-<%@ Page Language="C#" Inherits="AspNetText.CustomerSummaryPage" %>
-<% Response.ContentType = "text/plain"; %>
-<% Response.AddHeader("Content-Disposition", "attachment;filename=CustomerReport.txt"); %>
-Customer <%= Customer.Id %> (<%= Customer.Name %>)
-Address: <%= Customer.Address %>
-Phone: <%= Customer.PhoneNumber %>
-
-Past orders:
-------------
-<% foreach (var order in Customer.PastOrders) { %>
-        <%= order.Id %> (<%= order.Ref %>)
-        Placed on: <%= order.Placed %>
-        Total value: £<%= order.TotalValue %>
-<% } %>
-{% endhighlight %}
+<script src="https://gist.github.com/1093688.js?file=CustomerSummaryReport.aspx"></script>
 
 Notice how this page uses the exact same codebehind class as the other report, so our validation and data access code is centralised for both.  Here’s how the text report looks:
 
