@@ -2,7 +2,7 @@ We had a user story at work recently which required a simple summary report page
 
 As the report page was read-only, and quite simple, I opted not to use server controls, in line with my growing dislike of the whole [abstraction wrapped in deception covered in lie sauce][1] issue around webforms.  I wrote a simple code behind class to grab the input parameter from the query string, pull the relevant data from the repositories, and expose the data using a protected property on the page.
 
-<script src="https://gist.github.com/1093688.js?file=CustomerSummaryPage.aspx.cs"></script>
+{% gist 1093688 CustomerSummaryPage.aspx.cs %}
 
 Then the .aspx file uses clean markup with embedded server tags to render a simple summary report:
 
