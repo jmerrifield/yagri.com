@@ -40,19 +40,19 @@ When I wrote this for real I went for the quick-and-dirty method and churned out
 
 In my case, the actual predicate classes already used the Visitor pattern so in theory I could simply have referenced the core assembly and passed in a new Visitor implementation, making things even easier.  In practice there was something of a dependency nightmare so it wasn’t an option.  Here’s the interface and some of the code I had to add to the domain classes:
 
-<script src="https://gist.github.com/1093733.js?file=IPredicateVisitor.cs"></script>
+{% gist 1093733 IPredicateVisitor.cs %}
 
-<script src="https://gist.github.com/1093733.js?file=Predicates.cs"></script>
+{% gist 1093733 Predicates.cs %}
 
 I won’t include the whole visitor implementation here (all the code is attached at the end of the post) but here is one method to illustrate the idea:
 
-<script src="https://gist.github.com/1093733.js?file=PredicateVisitor.cs"></script>
+{% gist 1093733 PredicateVisitor.cs %}
 
 This writes 3 output lines.  The first sets the label and any styling for the graph node.  The next two link it to it’s left and right child.  Then we recurse into the left and then the right child.  I’m using an id converter class, which just contains a dictionary, to map the guid identifiers into something that GraphViz will accept (it chokes on guids, even with the hyphens removed).
 
 To invoke our visitor, we wrap it in a very simple program:
 
-<script src="https://gist.github.com/1093733.js?file=TreeVisualiser.cs"></script>
+{% gist 1093733 TreeVisualiser.cs %}
 
 The IndentedTextWriter is pure gold-plating by the way - dot markup ignores whitespace, but it makes it easier to verify the output if we need to.  We’re going to be piping the output from this program directly into dot, so we can’t write status or diagnostic messages directly to stdout (Console.Out).  We can print these to stderr (Console.Error) which will show up on screen but won’t get redirected.
 

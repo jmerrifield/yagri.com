@@ -6,7 +6,7 @@ As the report page was read-only, and quite simple, I opted not to use server co
 
 Then the .aspx file uses clean markup with embedded server tags to render a simple summary report:
 
-<script src="https://gist.github.com/1093688.js?file=CustomerSummaryPage.aspx"></script>
+{% gist 1093688 CustomerSummaryPage.aspx %}
 
 Notice how clean this looks compared to a normal ASP.NET page covered in server controls, it’s more like an MVC view.  When we load this page up and check the source, the goodness continues:
 
@@ -20,7 +20,7 @@ The interesting bit starts when we look at fulfilling the text-file export part 
 
 If you think about it, ASP.NET is really just a fancy text templating system, taking our .aspx files, and at runtime replacing our server tags with real values, although this aspect is hard to appreciate when you’re looking at a page loaded with DataGrids and hidden ViewState fields...  The point being that we’re not tied to rendering HTML, we can use this power to render whatever we want, and with a few hints to the browser as to what we’re sending it, we can get a real quick-and-easy text report for our users:
 
-<script src="https://gist.github.com/1093688.js?file=CustomerSummaryReport.aspx"></script>
+{% gist 1093688 CustomerSummaryReport.aspx %}
 
 Notice how this page uses the exact same codebehind class as the other report, so our validation and data access code is centralised for both.  Here’s how the text report looks:
 

@@ -2,23 +2,23 @@ Every time I interview for a programming job the same dreaded question comes up\
 
 Regardless of which method you use, you can't escape the fact that most string concatenation code is ugly as hell, let's look at a few ways you could create a comma separated list of customers names, each one surrounded with quotes:
 
-<script src="https://gist.github.com/1093711.js?file=Setup.cs"></script>
+{% gist 1093711 Setup.cs %}
 
-<script src="https://gist.github.com/1093711.js?file=StandardConcatenation.cs"></script>
+{% gist 1093711 StandardConcatenation.cs %}
 
-<script src="https://gist.github.com/1093711.js?file=StringBuilderConcatenation.cs"></script>
+{% gist 1093711 StringBuilderConcatenation.cs %}
 
-<script src="https://gist.github.com/1093711.js?file=StringJoinConcatenation.cs"></script>
+{% gist 1093711 StringJoinConcatenation.cs %}
 
 It's surprising how this fairly simple task turns into such a lot of code, none of it particularly intention-revealing.  The most unfriendly one appears to be the StringBuilder implementation.  As a side note, I expect most people wouldn't bother defining constants for 'quote' and 'separator', since they're unlikely to change, and only one character long anyway, but in this case having an obvious and explicit name for each one makes it clearer at a first glance to see the intention behind the code (see [ScreechinglyObviousCode][3]).
 
 With a few very simple extension methods, which look like they would come in handy all over, we can reduce this task to the amount of code that it seems like it should take - a screamingly obvious one-liner.
 
-<script src="https://gist.github.com/1093711.js?file=StringExtensions.cs"></script>
+{% gist 1093711 StringExtensions.cs %}
 
 Now we can use this:
 
-<script src="https://gist.github.com/1093711.js?file=ReadableConcatenation.cs"></script>
+{% gist 1093711 ReadableConcatenation.cs %}
 
 It's always worth adding a few simple utility methods to help make your core business logic code more readable and intention-revealing.  With extension methods our utility functions can be easily discoverable and obviously named (no more big-bag-o-crap static utility classes with hundreds of badly-named, unrelated functions!)
 
