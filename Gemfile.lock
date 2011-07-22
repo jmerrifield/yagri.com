@@ -7,6 +7,7 @@ GEM
     liquid (2.2.2)
     mime-types (1.16)
     rack (1.2.1)
+    rack-force_domain (0.2.0)
     rdiscount (1.6.8)
     rest-client (1.6.1)
       mime-types (>= 1.16)
@@ -30,6 +31,7 @@ DEPENDENCIES
   haml (= 3.0.25)
   json
   liquid
+  rack-force_domain (~> 0.2.0)
   rdiscount (= 1.6.8)
   rest-client
   rspec
