@@ -7,3 +7,4 @@ gem 'liquid'
 gem 'rest-client'
 gem 'json'
 gem "rack-force_domain", "~> 0.2.0"
+gem 'thin'
