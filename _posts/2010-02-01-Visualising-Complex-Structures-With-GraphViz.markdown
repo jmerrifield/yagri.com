@@ -120,4 +120,4 @@ If you find yourself in a similar situation where you can’t figure out the int
 [9]: /images/2010-02-01-Visualising-Complex-Structures-With-GraphViz-pic4.png
 [10]: http://www.graphviz.org/Download..php
 [11]: http://www.graphviz.org/pdf/dotguide.pdf
-[12]: https://github.com/jmerrifield/yagri.com/tree/master/code_examples/2010-02-01-Visualising-Complex-Structures-With-GraphViz
+[12]: https://github.com/jmerrifield/yagri.com/tree/master/public/code_examples/2010-02-01-Visualising-Complex-Structures-With-GraphViz
