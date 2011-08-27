@@ -76,9 +76,15 @@ em {
 }
 
 /* Index page */
-h2 {
+h1 {
     color: white;
-    font-size: 21px;
+    font-size: 22px;
+    margin-bottom: 7px;
+}
+
+h2 {
+    color: silver;
+    font-size: 14px;
     margin-bottom: 7px;
 }
 
