@@ -109,6 +109,10 @@ h2 {
     width: 100%;
 }
 
+#footer p {
+    margin: 2px;
+}
+
 /* Posts */
 div.post {
     border: 2px solid silver;
