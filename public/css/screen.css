@@ -115,15 +115,15 @@ div.post {
     -webkit-border-top-left-radius: 10px;
 }
 
-div.post h2 a {
+div.post h1 a {
     color: white;
 }
 
-div.post h2 a:hover {
+div.post h1 a:hover {
     color: red;
 }
 
-div.post h2 {
+div.post h1 {
     font-size: large;
     margin: 0 0 0 0;
     padding: 10px 10px 4px 10px;
