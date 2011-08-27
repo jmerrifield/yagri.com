@@ -139,6 +139,18 @@ div.post .footer {
     padding: 6px;
 }
 
+div.post .header {
+    text-align: right;
+    background-color: silver;
+    padding: 18px 8px 21px 8px;
+    margin: 0 18px 7px 7px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    float: left;
+}
+
 /* Comment threads */
 #disqus_thread {
     color: white;
