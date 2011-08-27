@@ -75,6 +75,20 @@ em {
     width: 448px;
 }
 
+/* Index page */
+h2 {
+    color: white;
+    font-size: 21px;
+    margin-bottom: 7px;
+}
+
+.posts li {
+    font-size: 12px;
+    list-style: none;
+    line-height: 2em;
+    color: white;
+}
+
 /* Page content layout */
 #content {
     width: 700px;
