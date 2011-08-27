@@ -138,3 +138,8 @@ div.post .footer {
     background-color: Black;
     padding: 6px;
 }
+
+/* Comment threads */
+#disqus_thread {
+    color: white;
+}
