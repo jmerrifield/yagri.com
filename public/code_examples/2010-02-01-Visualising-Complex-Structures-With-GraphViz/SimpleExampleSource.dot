@@ -1,0 +1,6 @@
+digraph G {
+	And -> Or;
+	Or -> Condition1;
+	Or -> Condition2;
+	And -> Condition3;
+}

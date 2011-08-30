@@ -1,0 +1,21 @@
+digraph G {
+    Root_1 [label="Root"];
+    Root_1 -> And_2;
+    And_2 [label="And"];
+    And_2 -> And_3;
+    And_2 -> Compare_4;
+    And_3 [label="And"];
+    And_3 -> And_5;
+    And_3 -> Or_6;
+    And_5 [label="And",color=gray];
+    And_5 -> Compare_7;
+    And_5 -> Compare_8;
+    Compare_7 [label="Date of Birth is more than 21 years ago"];
+    Compare_8 [label="Date of Birth is less than 65 years ago"];
+    Or_6 [label="Or"];
+    Or_6 -> Compare_9;
+    Or_6 -> Compare_10;
+    Compare_9 [label="Location equals 'Reading, UK'"];
+    Compare_10 [label="Willing to Relocate is true"];
+    Compare_4 [label="Years Experience is greater than 5"];
+}
