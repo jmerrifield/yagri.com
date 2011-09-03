@@ -25,7 +25,7 @@ class App < Sinatra::Base
 
     post = Post.new(filename)
     page_info = { title: "#{post.title} | yagri.com",
-        canonical_href: post.url.gsub(/\A\//, '') }
+        canonical_href: post.url }
 
     haml :post, :locals =>{ :post => post, :page_info => page_info }
   end
