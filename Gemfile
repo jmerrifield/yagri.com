@@ -8,3 +8,8 @@ gem 'rest-client'
 gem 'json'
 gem "rack-force_domain", "~> 0.2.0"
 gem 'thin'
+
+group :development do
+    gem 'cucumber'
+    gem 'capybara'
+end
