@@ -42,7 +42,7 @@ class App < Sinatra::Base
     redirect '/atom', 301
   end
 
-  get '/blog/post/:year/:month/:day/:slug.aspx' do
+  get '*/blog/post/:year/:month/:day/:slug.aspx' do
     post = Post.post_for_date(params[:year], params[:month], params[:day])
     redirect post.url, 301
   end
