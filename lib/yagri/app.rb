@@ -12,8 +12,8 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    page_title = 'Home Page | yagri.com'
-    haml :index, :locals => { :posts => get_posts, :page_title => page_title }
+    page_info = { title: 'Home Page | yagri.com' }
+    haml :index, :locals => { :posts => get_posts, :page_info => page_info }
   end
 
   get '/:year/:month/:day/:slug' do
@@ -24,8 +24,10 @@ class App < Sinatra::Base
     end
 
     post = Post.new(filename)
-    page_title = "#{post.title} | yagri.com"
-    haml :post, :locals =>{ :post => post, :page_title => page_title }
+    page_info = { title: "#{post.title} | yagri.com",
+        canonical_href: post.url.gsub(/\A\//, '') }
+
+    haml :post, :locals =>{ :post => post, :page_info => page_info }
   end
 
   get '/atom' do
