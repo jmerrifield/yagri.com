@@ -42,7 +42,25 @@ class App < Sinatra::Base
     redirect '/atom', 301
   end
 
-  get '*/blog/post/:year/:month/:day/:slug.aspx' do
+  get '/yagri?/blog/post.aspx' do
+    # Preserve old permalinks from the BlogEngine.net days
+    puts "Finding old post with GUID '#{params[:id]}'"
+
+    redirects = { 
+        '4858c45d-cf3d-4d96-8bea-7c4ede768e2b' => '/2010/01/26/Jon-starts-a-tech-blog',
+        'c9c54a9f-927b-4908-be18-5391e6945304' => '/2010/01/27/Form-Control-Naming-Conventions',
+        'd4b48f48-1bb9-4519-988f-c8ebf56638dd' => '/2010/01/29/LINQ-to-SQL-Unspecified-Error-and-missing-designer-file',
+        'd23719a1-8bfc-48e1-9896-c7c185ae3479' => '/2010/02/01/Visualising-Complex-Structures-With-GraphViz',
+        '59da6dcd-9072-4e83-93f9-098f0e3aed48' => '/2010/02/17/Readable-String-Concatenation',
+        '3a008a6f-82ac-44c1-9bb3-771f1abbf2fc' => '/2010/03/09/Rendering-Text-with-ASP.NET',
+    }
+
+    pass unless redirects.has_key? params[:id]
+    redirect redirects[params[:id]], 301
+  end
+
+  get '/yagri?/blog/post/:year/:month/:day/:slug.aspx' do
+    # Preserve old .aspx links from the BlogEngine.net days
     post = Post.post_for_date(params[:year], params[:month], params[:day])
     redirect post.url, 301
   end
