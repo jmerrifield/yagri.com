@@ -42,10 +42,13 @@ class App < Sinatra::Base
     redirect '/atom', 301
   end
 
-  get '/yagri?/blog/post.aspx' do
-    # Preserve old permalinks from the BlogEngine.net days
-    puts "Finding old post with GUID '#{params[:id]}'"
+  get '/yagri/blog/post.aspx' do
+    status, headers, body = call env.merge("PATH_INFO" => '/blog/post.aspx')
+    [status, headers, body]
+  end
 
+  get '/blog/post.aspx' do
+    # Preserve old permalinks from the BlogEngine.net days
     redirects = { 
         '4858c45d-cf3d-4d96-8bea-7c4ede768e2b' => '/2010/01/26/Jon-starts-a-tech-blog',
         'c9c54a9f-927b-4908-be18-5391e6945304' => '/2010/01/27/Form-Control-Naming-Conventions',
