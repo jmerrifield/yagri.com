@@ -62,9 +62,14 @@ class App < Sinatra::Base
     redirect redirects[params[:id]], 301
   end
 
-  get '/yagri?/blog/post/:year/:month/:day/:slug.aspx' do
+  get '/yagri/blog/post/:year/:month/:day/:slug.aspx' do |year, month, day, slug|
+    status, headers, body = call env.merge("PATH_INFO" => "/blog/post/#{year}/#{month}/#{day}/#{slug}.aspx")
+    [status, headers, body]
+  end
+
+  get '/blog/post/:year/:month/:day/:slug.aspx' do |year, month, day, slug|
     # Preserve old .aspx links from the BlogEngine.net days
-    post = Post.post_for_date(params[:year], params[:month], params[:day])
+    post = Post.post_for_date(year, month, day)
     redirect post.url, 301
   end
 end
