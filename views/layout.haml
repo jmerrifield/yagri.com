@@ -5,8 +5,10 @@
     %link{:rel => "stylesheet", :href => "/css/screen.css", :type => "text/css"}
     %link{:rel => "alternate", :href => "/atom", :type => "application/atom+xml", :title => "ATOM Feed"}
     %link{:rel => "shortcut icon", :href => "/favicon.ico"}
+    - if page_info[:canonical_href]
+      %link{:rel => "canonical", :href => page_info[:canonical_href]}
 
-    %title= page_title
+    %title= page_info[:title]
 
     :javascript
       var _gaq = _gaq || [];
