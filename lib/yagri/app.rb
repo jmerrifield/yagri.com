@@ -31,6 +31,7 @@ class App < Sinatra::Base
   end
 
   get '/atom' do
+    content_type 'application/atom+xml'
     haml :atom, :layout => false, :locals => { :posts => get_posts }, :escape_html => true
   end
 
