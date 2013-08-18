@@ -1,7 +1,8 @@
 class App < Sinatra::Base
   # Need to set these for static files - http://davidwparker.com/2009/11/13/sinatra-base-static-file-issue/
   set :static, true
-  set :public, 'public'
+  set :public_dir, 'public'
+  set :views, File.join(File.dirname(__FILE__), '../../views')
   Post.base_dir = File.join(File.dirname(__FILE__), '../../_posts')
 
   def get_posts
@@ -50,7 +51,7 @@ class App < Sinatra::Base
 
   get '/blog/post.aspx' do
     # Preserve old permalinks from the BlogEngine.net days
-    redirects = { 
+    redirects = {
         '4858c45d-cf3d-4d96-8bea-7c4ede768e2b' => '/2010/01/26/Jon-starts-a-tech-blog',
         'c9c54a9f-927b-4908-be18-5391e6945304' => '/2010/01/27/Form-Control-Naming-Conventions',
         'd4b48f48-1bb9-4519-988f-c8ebf56638dd' => '/2010/01/29/LINQ-to-SQL-Unspecified-Error-and-missing-designer-file',

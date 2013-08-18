@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-gem 'sinatra', '1.1.2'
-gem 'haml', '3.0.25'
+gem 'sinatra'
+gem 'haml'
 gem 'rspec'
-gem 'rdiscount', '1.6.8'
+gem 'rdiscount'
 gem 'liquid'
-gem "rack-force_domain", "~> 0.2.0"
+gem 'rack-force_domain'
 gem 'thin'
 
 group :development do
