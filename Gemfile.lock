@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     builder (3.0.0)
     capybara (1.1.0)
@@ -35,8 +35,6 @@ GEM
     rack-test (0.6.1)
       rack (>= 1.0)
     rdiscount (1.6.8)
-    rest-client (1.6.1)
-      mime-types (>= 1.16)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
       rspec-expectations (~> 2.5.0)
@@ -71,11 +69,9 @@ DEPENDENCIES
   capybara
   cucumber
   haml (= 3.0.25)
-  json
   liquid
   rack-force_domain (~> 0.2.0)
   rdiscount (= 1.6.8)
-  rest-client
   rspec
   sinatra (= 1.1.2)
   thin
