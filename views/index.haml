@@ -1,8 +1,0 @@
-%h1
-  =page_info[:title]
-%h2 Posts
-%ul.posts
-  - posts.each do |post|
-    %li.post
-      %span=post.date.strftime('%d %b %Y')
-      %a{:href => post.url}=post.title
